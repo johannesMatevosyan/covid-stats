@@ -2,7 +2,10 @@ import React, { Fragment, useState, useEffect } from 'react';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
 import axios from 'axios';
 
+const PlacemarkWithAddons = (props) => <Placemark {...props} modules={['geoObject.addon.balloon', 'geoObject.addon.hint']} />;
+
 function MapView(props) {
+  const myIcon = 'https://saguaroscuba.com/wp-content/uploads/2016/03/map-marker-icon.png';
   const [lang, setLang] = useState('en_US');
   const [countryData, setCountryData] = useState([]);
 
@@ -11,9 +14,21 @@ function MapView(props) {
     return response.data;
   };
 
-  const coordinates = [
-    [55.749, 37.738521],
-    [55.75, 37.573856],
+  const markerList = [
+    {
+      properties: {
+        hintContent: 'zzzz',
+        balloonContent: 'Stack Overflow на русском',
+      },
+      geometry: [55.749, 37.738521],
+    },
+    {
+      properties: {
+        hintContent: 'bbbb',
+        balloonContent: 'DDDDD',
+      },
+      geometry: [55.699, 37.738521],
+    },
   ];
 
   useEffect(() => {
@@ -25,28 +40,20 @@ function MapView(props) {
       .catch((err) => console.log('Could not get list of countries: ', err));
   }, []);
 
-  console.log('countryData  ***** ', countryData);
-
   return (
     <Fragment>
       <div className='map-view' id='map-view'>
         <YMaps key={{ lang: lang }} query={{ lang: lang }}>
           <Map defaultState={{ center: [55.75, 37.57], zoom: 12 }} width='100%' height='100%'>
-            {coordinates.map((coordinate, index) => (
-              <Placemark
-                geometry={coordinate}
+            {markerList.map((markerData, index) => (
+              <PlacemarkWithAddons
                 key={index}
-                imageHref={'https://saguaroscuba.com/wp-content/uploads/2016/03/map-marker-icon.png'}
-                contentLayout='<div style="background: red; width: 50px; color: #FFFFFF; font-weight: bold;">Content of icon</div>'
+                {...markerData}
                 options={{
-                  // Icon template type
                   iconLayout: 'default#image',
-                  // Custom icon URL
-                  iconImageHref: 'https://saguaroscuba.com/wp-content/uploads/2016/03/map-marker-icon.png',
-                  // Icon size
-                  iconImageSize: [64, 64],
-                  // Icon offset position
-                  iconImageOffset: [-3, -42],
+                  iconImageHref: myIcon,
+                  iconImageSize: [42, 42],
+                  iconImageOffset: [-18, -18],
                 }}
               />
             ))}
