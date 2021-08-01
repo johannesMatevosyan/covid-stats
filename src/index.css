@@ -1,13 +1,149 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+header#header {
+  color: #fff;
+  background-color: #263238;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 9999;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.logo {
+  border: 1px solid #fff;
+  padding: 3px 5px;
+}
+.logo .logo-link {
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  text-decoration: none;
+}
+.logo:hover {
+  border: 1px solid yellow;
+}
+.logo:hover .logo-link {
+  color: yellow;
+}
+
+.wrapper {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -50px;
+}
+
+.footer,
+.push {
+  height: 50px;
+}
+
+footer#footer {
+  background-color: #263238;
+  color: #fff;
+  width: 100%;
+  height: 60px;
+  z-index: 9999;
+  padding-top: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+}
+.footer-logo-link {
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+.menu li {
+  display: block;
+  margin: 12px;
+}
+.menu .menu-link {
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  text-decoration: none;
+  padding: 2px;
+}
+.search-box {
+  position: relative;
+}
+.search-stats-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 30px;
+  background-color: #263238;
+  color: #fff;
+  border: 1px solid #fff;
+  padding-left: 7px;
+  padding-right: 5px;
+  cursor: pointer;
+}
+.search-stats-btn:hover {
+  background-color: #333d42;
+  cursor: pointer;
+  outline: none;
+}
+.search-stats {
+  width: 320px;
+  height: 30px;
+  padding: 4px 12px 4px 4px;
+  font-size: 15px;
+  line-height: 17px;
+  color: #263238;
+  box-sizing: border-box;
+  outline: none;
+}
+.search-stats:focus {
+  background-color: #eaf3e2;
+  border: 1px solid #fff;
+}
+
+.search-page {
+  background: #ccc;
+  margin-top: 100px;
 }
