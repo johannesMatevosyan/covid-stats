@@ -5,3 +5,31 @@
   width: 100%;
   background-color: gray;
 }
+[class$='-balloon__layout'],
+[class$='-balloon__content'] {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  padding: 12px !important;
+  background-color: #263238 !important;
+  color: #fff !important;
+}
+[class$='-balloon__layout'] {
+  border-radius: 4px !important;
+  margin-bottom: 0 !important;
+}
+.stats-window {
+  position: relative;
+}
+[class$='-balloon__tail'] {
+  background: none !important;
+  box-shadow: none !important;
+}
+[class$='-balloon__tail']:after {
+  display: block;
+  position: absolute;
+  left: 50%;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: #263238 !important;
+}
