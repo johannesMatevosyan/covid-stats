@@ -1,0 +1,2 @@
+export const GET_COUNTRIES = 'GET_COUNTRIES';
+export const COUNTRY_ERROR = 'COUNTRY_ERROR';
