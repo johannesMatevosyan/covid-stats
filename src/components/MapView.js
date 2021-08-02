@@ -1,18 +1,14 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCountries } from '../store/actions/countryAction';
 
 const PlacemarkWithAddons = (props) => <Placemark {...props} modules={['geoObject.addon.balloon', 'geoObject.addon.hint']} />;
 
 function MapView(props) {
   const myIcon = 'https://saguaroscuba.com/wp-content/uploads/2016/03/map-marker-icon.png';
   const [lang, setLang] = useState('en_US');
-  const [countryData, setCountryData] = useState([]);
-
-  const fetchData = async () => {
-    const response = await axios.get('https://corona.lmao.ninja/v2/countries');
-    return response.data;
-  };
+  const dispatch = useDispatch();
 
   const markerList = [
     {
@@ -33,12 +29,8 @@ function MapView(props) {
 
   useEffect(() => {
     setLang('en_US');
-    fetchData()
-      .then((res) => {
-        setCountryData(res);
-      })
-      .catch((err) => console.log('Could not get list of countries: ', err));
-  }, []);
+    dispatch(getCountries());
+  }, [dispatch]);
 
   return (
     <Fragment>
