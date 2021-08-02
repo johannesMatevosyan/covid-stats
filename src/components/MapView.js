@@ -8,6 +8,10 @@ const PlacemarkWithAddons = (props) => <Placemark {...props} modules={['geoObjec
 function MapView(props) {
   const myIcon = 'https://saguaroscuba.com/wp-content/uploads/2016/03/map-marker-icon.png';
   const [lang, setLang] = useState('en_US');
+  const countryList = useSelector((state) => {
+    return state.countryList;
+  });
+  const { loading, error, countries } = countryList;
   const dispatch = useDispatch();
 
   const markerList = [
