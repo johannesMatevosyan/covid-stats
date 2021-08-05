@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect, useHooks } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCountries } from '../store/actions/countryAction';
@@ -21,20 +21,29 @@ function MapView(props) {
     dispatch(getCountries());
 
     const shortenedData = countries.map((item, index) => {
+      const updated = new Date(item.updated).toLocaleDateString('en-US');
       const stats =
         '<div class="stats-window"  key={' +
         index +
-        '}><ul class="stats-list"><li><span>' +
+        '}><ul class="stats-list">' +
+        '<li  class="mb-5"><span class="stats-country-flag">' +
+        '<img src=' +
         item.countryInfo.flag +
-        '</span></li><li><span>' +
+        ' alt="flag" /></span><span class="stats-label stats-country-name">' +
+        item.country +
+        '</span>' +
+        '</span></li>' +
+        '<li><span class="stats-label stats-cases">Confirmed cases:</span><span>' +
         item.cases +
-        '</span></li><li><span>' +
+        '</span></li><li><span class="stats-label stats-deaths">Confirmed deaths:</span><span>' +
         item.deaths +
-        '</span></li><li><span>' +
+        '</span></li><li><span class="stats-label stats-recovered">Recovered:</span><span>' +
         item.recovered +
-        '</span></li><li><span>' +
-        item.updated +
-        '</span></li></ul></div>';
+        '</span></li>' +
+        '<li><span class="stats-label stats-updated">Last updated:</span><span>' +
+        updated +
+        '</span></li>' +
+        '</ul></div>';
       const result = {
         properties: {
           hintContent: item.countryInfo.iso2,

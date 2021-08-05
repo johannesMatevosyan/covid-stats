@@ -1,11 +1,12 @@
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import SearchBox from '../Search/SearchBox';
+import css from './staticParts.module.css';
 
-function Header(props) {
+function Header() {
   return (
     <Fragment>
-      <header id='header'>
+      <header className={css.header}>
         <div className='logo'>
           <Link className='logo-link' to='/'>
             COVID Stats

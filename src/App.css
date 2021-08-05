@@ -33,3 +33,27 @@
   height: 20px;
   background-color: #263238 !important;
 }
+.stats-label {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100px;
+  margin-right: 2px;
+}
+.stats-country-flag {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 19px;
+  margin-right: 7px;
+}
+.stats-country-flag img {
+  width: 100%;
+}
+.stats-country-name {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.mb-5 {
+  margin-bottom: 5px;
+}

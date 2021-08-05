@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Footer = (props) => {
   return (
     <Fragment>
-      <footer id='footer'>
+      <footer className='footer'>
         <div className='footer-logo'>
           <Link className='footer-logo-link' to='/'>
             COVID Stats

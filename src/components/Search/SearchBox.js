@@ -1,18 +1,18 @@
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import { useHistory } from 'react-router-dom';
+import css from './searchBox.module.css';
 
-function SearchBox(props) {
+function SearchBox() {
   const history = useHistory();
-
   const handleOnSubmit = () => {
     history.push(`/search`);
   };
 
   return (
     <Fragment>
-      <div className='search-box'>
-        <input type='search' className='search-stats' autoComplete='off' />
-        <button type='button' className='search-stats-btn' onClick={() => handleOnSubmit()}>
+      <div className={css.searchBox}>
+        <input type='search' className={css.searchStats} autoComplete='off' />
+        <button type='button' className={css.searchStatsBtn} onClick={() => handleOnSubmit()}>
           Search
         </button>
       </div>
