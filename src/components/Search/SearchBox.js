@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { useHistory } from 'react-router-dom';
-import css from './searchBox.module.css';
+import * as css from './search.module.css';
 
 function SearchBox() {
   const history = useHistory();

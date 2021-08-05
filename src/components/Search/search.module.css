@@ -33,7 +33,23 @@
   border: 1px solid #fff;
 }
 
-.search-page {
-  background: #ccc;
-  margin-top: 100px;
+.searchPage {
+  padding-top: 60px;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+.searchPageList {
+  background: #f6f6ef;
+  margin-top: 10px;
+}
+.searchPageList li {
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom: 1px solid #d4cbcb;
+}
+.title {
+  position: relative;
+  margin-bottom: 4px;
+  font-size: 14px;
 }
