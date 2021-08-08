@@ -9,5 +9,32 @@
   padding-right: 0px;
   box-sizing: border-box;
   position: fixed;
-  bottom: 50px;
+  bottom: 30px;
+}
+.totalStatisticsList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.totalStatisticsList li {
+  display: block;
+  width: 33.2%;
+  border: 1px solid #fff;
+}
+.statsTopRow {
+  height: 120px;
+}
+.statsLowRow {
+  height: 80px;
+}
+.statsTopRow h2,
+.statsLowRow h2 {
+  font-size: 32px;
+  line-height: 32px;
+  margin: 0;
+  padding: 0;
+}
+.statNumberWrapper {
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
