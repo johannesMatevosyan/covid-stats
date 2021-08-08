@@ -1,7 +1,7 @@
 #map-view {
   position: fixed;
   top: 60px;
-  bottom: 60px;
+  bottom: 250px;
   width: 100%;
   background-color: gray;
 }

@@ -61,7 +61,7 @@ function MapView(props) {
     <Fragment>
       <div className='map-view' id='map-view'>
         <YMaps key={{ lang: lang }} query={{ lang: lang }}>
-          <Map defaultState={{ center: [55.75, 37.57], zoom: 12 }} width='100%' height='100%'>
+          <Map defaultState={{ center: [55.75, 37.57], zoom: 2 }} width='100%' height='100%'>
             {markerData.map((marker, index) => (
               <PlacemarkWithAddons
                 key={index}
